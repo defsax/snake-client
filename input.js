@@ -17,6 +17,7 @@ const handleUserInput = function(key) {
     process.exit();
   }
 
+  //MOVEMENT
   if (key === 'w') {
     connection.write('Move: up');
   }
@@ -28,6 +29,18 @@ const handleUserInput = function(key) {
   }
   if (key === 'd') {
     connection.write('Move: right');
+  }
+
+  //MESSAGES
+  if (key === '`') {
+    connection.write('Say: SUPPPPPP!');
+  }
+
+  if (key === '1') {
+    connection.write('Say: i eat!');
+  }
+  if (key === '2') {
+    connection.write('Say: yum');
   }
 };
 
