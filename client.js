@@ -1,18 +1,17 @@
 //client connection module
+/*
+ * Establishes connection with the game server
+*/
 
 //snake client!!
 const net = require('net');
-
-/**
- * Establishes connection with the game server
- */
+const { NAME } = require('./constants.js');
+const { IP, PORT } = require('./constants.js');
 
 const connect = function() {
   const conn = net.createConnection({
-    host: '135.23.222.131',
-    //host: '10.0.2.15',
-    port: 50542
-    //port: 50541
+    host: IP,
+    port: PORT
   });
   // interpret incoming data as text
   conn.setEncoding('utf8');
@@ -22,7 +21,7 @@ const connect = function() {
   });
   conn.on('connect', (data) => {
     console.log('Connekted.');
-    conn.write('Name: M0B');
+    conn.write(NAME);
     //conn.write('Move: up');
   });
 
