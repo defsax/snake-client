@@ -1,4 +1,4 @@
-const { MOVE_KEYS } = require('./constants.js');
+const { MOVE_KEYS, MSGS } = require('./constants.js');
 
 // Stores the active TCP connection object.
 let connection;
@@ -31,14 +31,16 @@ const handleUserInput = function(key) {
 
   //MESSAGES
   if (key === '`') {
-    connection.write('Say: SUPPPPPP!');
+    connection.write(MSGS['1']);
   }
-
   if (key === '1') {
-    connection.write('Say: i eat!');
+    connection.write(MSGS['2']);
   }
   if (key === '2') {
-    connection.write('Say: yum');
+    connection.write(MSGS['3']);
+  }
+  if (key === '3') {
+    connection.write(MSGS['4']);
   }
 };
 
