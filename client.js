@@ -23,7 +23,10 @@ const connect = function() {
   conn.on('connect', (data) => {
     console.log('Connekted.');
     conn.write('Name: M0B');
+    //conn.write('Move: up');
   });
+
+  //setInterval(() => conn.write('Move: up'), 100);
 
   return conn;
 };
